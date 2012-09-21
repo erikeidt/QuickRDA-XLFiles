@@ -1,0 +1,8 @@
+Run pushpin if necessary to disable the installed QuickRDA.xlam
+Close all running copies of excel (check with task manager if you've been debugging and may have caused COM ref counts to be bad)
+Open QuickRDA.xlsm
+make sure it is VBA compiled
+Save as QuickRDA.xlam to the XLDev folder (not the Excel AddIns folder)
+Quit Excel
+Install QuickRDA.xlam, via double click on it, and enable any macros as needed, then run pushpin button
+Quit Excel to finalize installation

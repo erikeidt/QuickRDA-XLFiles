@@ -1,0 +1,79 @@
+
+define Art2Art <?A1, ?A2> =
+	reveal where
+		( ?A1 ? ?A2 | ?A2 ? ?A1 ) &
+		?A1 "Is An Instance Of" "Artifact" &
+		?A2 "Is An Instance Of" "Artifact"
+		.
+
+define Role2Role2 <?Role1, ?Role2> =
+	reveal where
+		?Resp1 "Is Assigned To" ?Role1 &
+		(
+			(
+				( ?Resp1 "Consumes" ?ArtA  | ?Resp1 "Consumes (Provides Input)" ?ArtA ) &
+				( ?Resp2 "Provides" ?ArtA2 | ?Resp2 "Provides (Consumes Input)" ?ArtA2 )
+		 	) |
+			(
+		  		( ?Resp1 "Provides" ?ArtA  | ?Resp1 "Provides (Consumes Input)" ?ArtA ) &
+			 	( ?Resp2 "Consumes" ?ArtA2 | ?Resp2 "Consumes (Provides Input)" ?ArtA2 )
+			)
+		) &
+		[] Art2Art <?ArtA, ?ArtA2> &
+		?Resp2 "Is Assigned To" ?Role2
+		.
+
+define RRAR < ?Role1, ?Role2 > =
+	reveal where
+		?Resp1 "Is Assigned To" ?Role1 &
+		(
+			(
+				( ?Resp1 "Consumes" ?ArtA  | ?Resp1 "Consumes (Provides Input)" ?ArtA ) &
+				( ?Role2 "Provides" ?ArtA2 | ?Role2 "Provides (Consumes Input)" ?ArtA2 )
+		 	) |
+			(
+		  		( ?Resp1 "Provides" ?ArtA  | ?Resp1 "Provides (Consumes Input)" ?ArtA ) &
+			 	( ?Role2 "Consumes" ?ArtA2 | ?Role2 "Consumes (Provides Input)" ?ArtA2 )
+			)
+		) &
+		[] Art2Art <?ArtA, ?ArtA2> &
+		?Role2 "Is An Instance Of" "Role"
+		.
+
+define Role2ArtifactAbstraction < ?Role1 > =
+	infer
+		( ?Role1 ?Provides ?ArtA &
+		  ?Role2 ?Consumes ?ArtA2 )
+	where
+		( ?Consumes "=" "Consumes" | ?Consumes "=" "Consumes (Provides Input)" ) &
+		( ?Provides "=" "Provides" | ?Provides "=" "Provides (Consumes Input)" ) &
+		hide ( ?Resp1 "Is Assigned To" ?Role1 ) &
+		(
+			hide ( ?Resp1 ?Provides ?ArtA  &  ?Resp2 ?Consumes ?ArtA2 ) // want hide ( stmt ) and hide ( ?var )
+		) &
+		[] Art2Art <?ArtA, ?ArtA2> &
+		hide ( ?Resp2 "Is Assigned To" ?Role2 ) &
+		?Role1 "!=" ?Role2
+		.
+
+define SubArtifactOf<?A1,?A2> =
+	reveal where
+		?A1 "Is A Component Of" ?A2 |
+		?A1 "Is A Kind Of" ?A2
+.
+
+define UnconsumedArtifact<?A1> =
+            reveal where
+			?R1 "Provides" ?A1
+	    unless
+			?R2 "Consumes" ?A2 &
+			 [] SubArtifactOf<?A1,?A2>
+            .
+
+define UnprovidedArtifact<?A1> =
+            reveal where
+			?R1 "Consumes" ?A1
+	    unless
+			?R2 "Provides" ?A2 &
+			 [] SubArtifactOf<?A2,?A1>
+            .
