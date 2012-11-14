@@ -77,3 +77,5 @@ define UnprovidedArtifact<?A1> =
 			?R2 "Provides" ?A2 &
 			 [] SubArtifactOf<?A2,?A1>
             .
+
+define TemplateFilter<> = reveal where ?A1 "Is In Template" ?.
