@@ -1,0 +1,16 @@
+digraph "Contextual Diagram (4.4)" {
+compound=true
+label="Contextual Diagram" fontsize=24 labelloc=t
+node [ fontname="Times New Roman Sans Serif" fontsize=12 ]
+edge [ fontname="Times New Roamn Sans Serif" fontsize=10 labeldistance=5 ]
+pad=0.35 ranksep="0.8" nodesep="0.8" searchsize=1800000 remincross=true
+11114 [ label="RR1" shape="circle" fillcolor="#AFFFAF" color="#AFFFAF" style="filled,rounded,setlinewidth(-1)" URL="file:///R:/TEMP/QuickRDA/links/QuickRDA Unified Entry Form.xlsx...Roles In Opposition...5.xyz#11114" tooltip=" " ]
+11116 [ label="rrr1" shape="ellipse" fillcolor="#E1AFE1" color="#E1AFE1" style="filled,rounded,setlinewidth(-1)" URL="file:///R:/TEMP/QuickRDA/links/QuickRDA Unified Entry Form.xlsx...Roles In Opposition...5.xyz#11116" tooltip=" " ]
+11120 [ label="rrr2" shape="ellipse" fillcolor="#E1AFE1" color="#E1AFE1" style="filled,rounded,setlinewidth(-1)" URL="file:///R:/TEMP/QuickRDA/links/QuickRDA Unified Entry Form.xlsx...Roles In Opposition...5.xyz#11120" tooltip=" " ]
+11122 [ label="RR2" shape="circle" fillcolor="#AFFFAF" color="#AFFFAF" style="filled,rounded,setlinewidth(-1)" URL="file:///R:/TEMP/QuickRDA/links/QuickRDA Unified Entry Form.xlsx...Roles In Opposition...5.xyz#11122" tooltip=" " ]
+11114->11116 [ label="Is Assigned To" weight="90" dir="back" color="#65FF65" fontcolor="#51CC51" arrowhead="normal" URL="file:///R:/TEMP/QuickRDA/links/QuickRDA Unified Entry Form.xlsx...Roles In Opposition...5.xyz#11118" ]
+11116->11107 [ label="Provides" weight="90" dir="forward" color="#4BACC6" fontcolor="#3C8A9E" arrowhead="normal" URL="file:///R:/TEMP/QuickRDA/links/QuickRDA Unified Entry Form.xlsx...Roles In Opposition...5.xyz#11119" ]
+11122->11120 [ label="Is Assigned To" weight="90" dir="back" color="#65FF65" fontcolor="#51CC51" arrowhead="normal" URL="file:///R:/TEMP/QuickRDA/links/QuickRDA Unified Entry Form.xlsx...Roles In Opposition...5.xyz#11124" ]
+11107->11120 [ label="Consumes" weight="2" dir="back" color="#BCBC00" fontcolor="#969600" arrowhead="normal" URL="file:///R:/TEMP/QuickRDA/links/QuickRDA Unified Entry Form.xlsx...Roles In Opposition...5.xyz#11125" ]
+11107 [ label="" shape="circle" fillcolor="Gray80" color="Gray80" URL="file:///R:/TEMP/QuickRDA/links/QuickRDA Unified Entry Form.xlsx...Artifacts...5.xyz#11107" tooltip="AA1" style="filled" width="0.05" height="0.05" ]
+}
