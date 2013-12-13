@@ -9,23 +9,23 @@ if not exist "%systemdrive%\Program Files\Graphviz 2.29\bin\dot.exe" GOTO :T2
 GOTO :DONE
 :T2
 if not exist "%systemdrive%\Program Files (x86)\Graphviz 2.29\bin\dot.exe" GOTO :T3
-"%systemdrive%\Program Files (x86)\Graphviz 2.29\bin\dot.exe" -Gcharset=latin1 -Tsvg -o%1.svg -Kdot %1.txt
+"%systemdrive%\Program Files (x86)\Graphviz 2.29\bin\dot.exe" -Gcharset=latin1 -Gfontpath=%systemdrive%\Windows\Fonts -Gfontname=Arial -Nfontname=Arial -Efontname=Arial -Tsvg -o%1.svg -Kdot %1.txt
 GOTO :DONE
 :T3
 if not exist "%systemdrive%\Program Files\Graphviz 2.28\bin\dot.exe" GOTO :T4
-"%systemdrive%\Program Files\Graphviz 2.28\bin\dot.exe" -Gcharset=latin1 -Tsvg -o%1.svg -Kdot %1.txt
+"%systemdrive%\Program Files\Graphviz 2.28\bin\dot.exe" -Gcharset=latin1 -Gfontpath=%systemdrive%\Windows\Fonts -Gfontname=Arial -Nfontname=Arial -Efontname=Arial -Tsvg -o%1.svg -Kdot %1.txt
 GOTO :DONE
 :T4
 if not exist "%systemdrive%\Program Files (x86)\Graphviz 2.28\bin\dot.exe" GOTO :T5
-"%systemdrive%\Program Files (x86)\Graphviz 2.28\bin\dot.exe" -Gcharset=latin1 -Tsvg -o%1.svg -Kdot %1.txt
+"%systemdrive%\Program Files (x86)\Graphviz 2.28\bin\dot.exe" -Gcharset=latin1 -Gfontpath=%systemdrive%\Windows\Fonts -Gfontname=Arial -Nfontname=Arial -Efontname=Arial -Tsvg -o%1.svg -Kdot %1.txt
 GOTO :DONE
 :T5
 if not exist "%systemdrive%\Program Files\Graphviz2.27\bin\dot.exe" GOTO :T6
-"%systemdrive%\Program Files\Graphviz2.27\bin\dot.exe" -Gcharset=latin1 -Tsvg -o%1.svg -Kdot %1.txt
+"%systemdrive%\Program Files\Graphviz2.27\bin\dot.exe" -Gcharset=latin1 -Gfontpath=%systemdrive%\Windows\Fonts -Gfontname=Arial -Nfontname=Arial -Efontname=Arial -Tsvg -o%1.svg -Kdot %1.txt
 GOTO :DONE
 :T6
 if not exist "%systemdrive%\Program Files (x86)\Graphviz2.27\bin\dot.exe" GOTO :T7
-"%systemdrive%\Program Files (x86)\Graphviz2.27\bin\dot.exe" -Gcharset=latin1 -Tsvg -o%1.svg -Kdot %1.txt
+"%systemdrive%\Program Files (x86)\Graphviz2.27\bin\dot.exe" -Gcharset=latin1 -Gfontpath=%systemdrive%\Windows\Fonts -Gfontname=Arial -Nfontname=Arial -Efontname=Arial -Tsvg -o%1.svg -Kdot %1.txt
 GOTO :DONE
 :T7
 echo
